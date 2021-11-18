@@ -1,0 +1,70 @@
+<div layout:fragment="card(heading, heading_level, href)"
+     class="card">
+    <div class="card-body">
+        <th:block layout:replace="~{components/h.html :: h(${heading_level})}">
+            <th:block th:if="${heading}" layout:fragment="h_body">
+                <a th:if="${href}" th:href="${href}" th:text="${heading}"></a>
+                <th:block th:unless="${href}" th:text="${heading}"></th:block>
+            </th:block>
+<!--            This kills the component: -->
+<!--            <th:block th:unless="${heading}" layout:fragment="h_body">-->
+<!--                <th:block layout:fragment="heading"></th:block>-->
+<!--            </th:block>-->
+        </th:block>
+        <p class="card-text">
+            <th:block layout:fragment="body"></th:block>
+        </p>
+    </div>
+</div>
+
+<div layout:fragment="with_html_heading(heading_level, href)"
+     class="card">
+    <div class="card-body">
+<!--        We have to create hn here ...-->
+        <th:block th:switch="${heading_level}">
+            <h1 th:case="1" class="card-title">
+                <a th:if="${href}" th:href="${href}">
+                    <th:block layout:fragment="heading"></th:block>
+                </a>
+                <th:block th:unless="${href}" layout:fragment="heading"></th:block>
+            </h1>
+            <h2 th:case="2" class="card-title">
+                <a th:if="${href}" th:href="${href}">
+                    <th:block layout:fragment="heading"></th:block>
+                </a>
+                <th:block th:unless="${href}" layout:fragment="heading"></th:block>
+            </h2>
+            <h3 th:case="3" class="card-title">
+                <a th:if="${href}" th:href="${href}">
+                    <th:block layout:fragment="heading"></th:block>
+                </a>
+                <th:block th:unless="${href}" layout:fragment="heading"></th:block>
+            </h3>
+            <h4 th:case="4" class="card-title">
+                <a th:if="${href}" th:href="${href}">
+                    <th:block layout:fragment="heading"></th:block>
+                </a>
+                <th:block th:unless="${href}" layout:fragment="heading"></th:block>
+            </h4>
+            <h5 th:case="5" class="card-title">
+                <a th:if="${href}" th:href="${href}">
+                    <th:block layout:fragment="heading"></th:block>
+                </a>
+                <th:block th:unless="${href}" layout:fragment="heading"></th:block>
+            </h5>
+            <h6 th:case="6" class="card-title">
+                <a th:if="${href}" th:href="${href}">
+                    <th:block layout:fragment="heading"></th:block>
+                </a>
+                <th:block th:unless="${href}" layout:fragment="heading"></th:block>
+            </h6>
+        </th:block>
+        <p class="card-text">
+            <th:block layout:fragment="body"></th:block>
+        </p>
+    </div>
+    <div class="card-footer">
+        <th:block layout:fragment="footer">:( - hello, I am Default Content, the sad smiley.</th:block>
+    </div>
+</div>
+

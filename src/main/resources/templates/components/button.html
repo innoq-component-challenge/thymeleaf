@@ -1,0 +1,10 @@
+<button layout:fragment="button(content, cta, name, value, type)"
+        th:type="${type == 'button' ? 'button' : 'submit'}"
+        th:class="|btn ${cta == true ? 'btn-primary' : 'btn-secondary'}|"
+        th:classappend="${additional_classes}"
+        th:text="${content}"
+        th:attr="data-foo=${additional_attributes['data-foo']}, aria-live=${additional_attributes['aria-live']}"
+        th:name="${name}"
+        th:value="${value}">
+    Button
+</button>

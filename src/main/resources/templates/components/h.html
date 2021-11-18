@@ -1,0 +1,26 @@
+<th:block layout:fragment="h(lvl, text)" th:switch="${lvl}">
+    <h1 th:case="1">
+        <th:block th:if="${text}" th:text="${text}"></th:block>
+        <th:block  layout:fragment="h_body"></th:block>
+    </h1>
+    <h2 th:case="2">
+        <th:block th:if="${text}" th:text="${text}"></th:block>
+        <th:block  layout:fragment="h_body"></th:block>
+    </h2>
+    <h3 th:case="3">
+        <th:block th:if="${text}" th:text="${text}"></th:block>
+        <th:block  layout:fragment="h_body"></th:block>
+    </h3>
+    <h4 th:case="4">
+        <th:block th:if="${text}" th:text="${text}"></th:block>
+        <th:block  layout:fragment="h_body"></th:block>
+    </h4>
+    <h5 th:case="5">
+        <th:block th:if="${text}" th:text="${text}"></th:block>
+        <th:block  layout:fragment="h_body"></th:block>
+    </h5>
+    <h6 th:case="6">
+        <th:block th:if="${text}" th:text="${text}"></th:block>
+        <th:block  layout:fragment="h_body"></th:block>
+    </h6>
+</th:block>
